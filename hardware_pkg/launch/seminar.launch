@@ -34,11 +34,7 @@
 
   <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"/>
 
-  <!-- <node name="middleware_node" pkg="hardware_pkg" type="middleware_node.py" output="screen"/> -->
-
   <node name="hardware_node" pkg="hardware_pkg" type="hardware_node.py" output="screen"/>
-  
-  <!-- <node name="input_handler_node" pkg="hardware_pkg" type="input_handler_node.py" output="screen"/> -->
 
   <node name="commander" pkg="maxliebao" type="commander.py" required="true" output="screen"/> 
 
