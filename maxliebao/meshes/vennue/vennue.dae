@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1">
+  <asset>
+    <contributor>
+      <author>Blender User</author>
+      <authoring_tool>Blender 2.79.0</authoring_tool>
+    </contributor>
+    <created>2019-07-31T16:51:06</created>
+    <modified>2019-07-31T16:51:06</modified>
+    <unit name="meter" meter="1"/>
+    <up_axis>Z_UP</up_axis>
+  </asset>
+  <library_cameras>
+    <camera id="Camera-camera" name="Camera">
+      <optics>
+        <technique_common>
+          <perspective>
+            <xfov sid="xfov">49.13434</xfov>
+            <aspect_ratio>1.777778</aspect_ratio>
+            <znear sid="znear">0.1</znear>
+            <zfar sid="zfar">100</zfar>
+          </perspective>
+        </technique_common>
+      </optics>
+      <extra>
+        <technique profile="blender">
+          <shiftx sid="shiftx" type="float">0</shiftx>
+          <shifty sid="shifty" type="float">0</shifty>
+          <YF_dofdist sid="YF_dofdist" type="float">0</YF_dofdist>
+        </technique>
+      </extra>
+    </camera>
+  </library_cameras>
+  <library_lights>
+    <light id="Lamp-light" name="Lamp">
+      <technique_common>
+        <point>
+          <color sid="color">1 1 1</color>
+          <constant_attenuation>1</constant_attenuation>
+          <linear_attenuation>0</linear_attenuation>
+          <quadratic_attenuation>0.00111109</quadratic_attenuation>
+        </point>
+      </technique_common>
+      <extra>
+        <technique profile="blender">
+          <type sid="type" type="int">0</type>
+          <flag sid="flag" type="int">0</flag>
+          <mode sid="mode" type="int">8192</mode>
+          <gamma sid="blender_gamma" type="float">1</gamma>
+          <red sid="red" type="float">1</red>
+          <green sid="green" type="float">1</green>
+          <blue sid="blue" type="float">1</blue>
+          <shadow_r sid="blender_shadow_r" type="float">0</shadow_r>
+          <shadow_g sid="blender_shadow_g" type="float">0</shadow_g>
+          <shadow_b sid="blender_shadow_b" type="float">0</shadow_b>
+          <energy sid="blender_energy" type="float">1</energy>
+          <dist sid="blender_dist" type="float">29.99998</dist>
+          <spotsize sid="spotsize" type="float">75</spotsize>
+          <spotblend sid="spotblend" type="float">0.15</spotblend>
+          <halo_intensity sid="blnder_halo_intensity" type="float">1</halo_intensity>
+          <att1 sid="att1" type="float">0</att1>
+          <att2 sid="att2" type="float">1</att2>
+          <falloff_type sid="falloff_type" type="int">2</falloff_type>
+          <clipsta sid="clipsta" type="float">1.000799</clipsta>
+          <clipend sid="clipend" type="float">30.002</clipend>
+          <bias sid="bias" type="float">1</bias>
+          <soft sid="soft" type="float">3</soft>
+          <compressthresh sid="compressthresh" type="float">0.04999995</compressthresh>
+          <bufsize sid="bufsize" type="int">2880</bufsize>
+          <samp sid="samp" type="int">3</samp>
+          <buffers sid="buffers" type="int">1</buffers>
+          <filtertype sid="filtertype" type="int">0</filtertype>
+          <bufflag sid="bufflag" type="int">0</bufflag>
+          <buftype sid="buftype" type="int">2</buftype>
+          <ray_samp sid="ray_samp" type="int">1</ray_samp>
+          <ray_sampy sid="ray_sampy" type="int">1</ray_sampy>
+          <ray_sampz sid="ray_sampz" type="int">1</ray_sampz>
+          <ray_samp_type sid="ray_samp_type" type="int">0</ray_samp_type>
+          <area_shape sid="area_shape" type="int">1</area_shape>
+          <area_size sid="area_size" type="float">0.1</area_size>
+          <area_sizey sid="area_sizey" type="float">0.1</area_sizey>
+          <area_sizez sid="area_sizez" type="float">1</area_sizez>
+          <adapt_thresh sid="adapt_thresh" type="float">0.000999987</adapt_thresh>
+          <ray_samp_method sid="ray_samp_method" type="int">1</ray_samp_method>
+          <shadhalostep sid="shadhalostep" type="int">0</shadhalostep>
+          <sun_effect_type sid="sun_effect_type" type="int">0</sun_effect_type>
+          <skyblendtype sid="skyblendtype" type="int">1</skyblendtype>
+          <horizon_brightness sid="horizon_brightness" type="float">1</horizon_brightness>
+          <spread sid="spread" type="float">1</spread>
+          <sun_brightness sid="sun_brightness" type="float">1</sun_brightness>
+          <sun_size sid="sun_size" type="float">1</sun_size>
+          <backscattered_light sid="backscattered_light" type="float">1</backscattered_light>
+          <sun_intensity sid="sun_intensity" type="float">1</sun_intensity>
+          <atm_turbidity sid="atm_turbidity" type="float">2</atm_turbidity>
+          <atm_extinction_factor sid="atm_extinction_factor" type="float">1</atm_extinction_factor>
+          <atm_distance_factor sid="atm_distance_factor" type="float">1</atm_distance_factor>
+          <skyblendfac sid="skyblendfac" type="float">1</skyblendfac>
+          <sky_exposure sid="sky_exposure" type="float">1</sky_exposure>
+          <sky_colorspace sid="sky_colorspace" type="int">0</sky_colorspace>
+        </technique>
+      </extra>
+    </light>
+  </library_lights>
+  <library_images/>
+  <library_geometries>
+    <geometry id="vennue-mesh" name="vennue">
+      <mesh>
+        <source id="vennue-mesh-positions">
+          <float_array id="vennue-mesh-positions-array" count="240">-0.46 0.00999999 -6.55 -0.46 0.00999999 -7.95 -0.6 0.00999999 -6.55 -1.95 0.00999999 -7.95 -1.95 0.00999999 -6.55 -1.95 0.00999999 -5.45 -0.6 0.00999999 -5.45 -1.95 0.00999999 -4.05 -1.063137 0.00999999 -4.05 0.3368629 0.00999999 -5.45 -1.020711 0.00999999 -4.05 0.3792893 0.00999999 -5.45 0.04999995 0.00999999 -1.05 1.85 0.00999999 -1.05 0.04999995 0.00999999 -3.490711 1.85 0.00999999 -3.490711 1.85 0.00999999 -3.520711 0.04999995 0.00999999 -3.520711 0.04999995 0.00999999 -0.04999995 1.85 0.00999999 -0.04999995 -0.4723106 0.11 -6.5 -0.4723106 0.11 -6.55 -0.55 0.11 -6.5 -0.6 0.11 -6.55 -0.55 0.11 -5.5 -0.6 0.11 -5.45 0.4 0.11 -5.5 0.3792893 0.11 -5.45 0.04999995 0.11 -3.520711 0 0.11 -3.5 0.04999995 0.11 -0.04999995 0 0.11 0 1.85 0.11 -0.04999995 1.9 0.11 0 1.85 0.11 -3.979289 1.9 0.11 -4 1.108579 0.11 -4.720711 0.8964466 0.11 -4.932843 -0.02071064 0.11 -3.591421 -0.2328427 0.11 -3.803553 -0.5 0.11 -4 -0.4792893 0.11 -4.05 -2 0.11 -4 -1.95 0.11 -4.05 -2 0.11 -8 -1.95 0.11 -7.95 -0.4723106 0.11 -8 -0.4723106 0.11 -7.95 2.15 0.4 -7.95 1.1 0.4 -7.95 2.15 0.4 -6.55 1.1 0.4 -6.55 2.15 0.5 -7.95 1.087689 0.5 -7.95 1.087689 0.5 -6.55 2.15 0.5 -6.55 -0.02071064 0.00999999 -3.591421 -0.2328427 0.00999999 -3.803553 -0.4792893 0.00999999 -4.05 1.108579 0.00999999 -4.720711 1.85 0.00999999 -3.979289 0.8964466 0.00999999 -4.932843 1.9 0 0 0 0 0 1.9 0 -4 0.4 0 -5.5 -0.55 0 -5.5 -0.55 0 -6.5 1.087689 0.5 -6.5 2.2 0 -6.5 2.2 0.5 -6.5 2.2 0.5 -8 2.2 0 -8 -2 0 -8 1.087689 0.5 -8 -2 0 -4 -0.5 0 -4 0 0 -3.5 -0.5 0 -4 0 0 -3.5</float_array>
+          <technique_common>
+            <accessor source="#vennue-mesh-positions-array" count="80" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="vennue-mesh-normals">
+          <float_array id="vennue-mesh-normals-array" count="120">0 1 0 0 1 0 0 1 -2.91745e-7 0 1 3.13707e-7 0 1 3.31137e-7 0 1 -2.84229e-7 0 1 4.96706e-7 0 1 0 0 1 2.13772e-7 0 0 1 2.96538e-6 0 1 0 0 -1 1.48269e-6 0 -1 -2.96538e-6 0 -1 -0.2425357 0.9701425 0 -0.2425357 0.9701425 0 0.7071073 0 -0.7071063 0.7071073 0 -0.7071064 0.7071078 0 -0.7071058 0.707107 0 -0.7071067 -0.707107 0 0.7071067 -0.7071069 0 0.7071067 -0.7071068 0 0.7071068 0 1 0 0 1 0 1 0 0 0.707107 0 -0.7071066 0.7071067 0 -0.7071068 3.37462e-6 0 1 -1 0 0 0 -1 0 0 1 0 1 0 0 -1 2.42709e-6 0 0.707107 0 0.7071067 0.7071066 0 0.707107 -0.7071068 0 -0.7071068 -0.707107 0 -0.7071066 -0.2425377 0.9701421 0 -0.2425321 0.9701434 0</float_array>
+          <technique_common>
+            <accessor source="#vennue-mesh-normals-array" count="40" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="vennue-mesh-vertices">
+          <input semantic="POSITION" source="#vennue-mesh-positions"/>
+        </vertices>
+        <triangles count="152">
+          <input semantic="VERTEX" source="#vennue-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#vennue-mesh-normals" offset="1"/>
+          <p>0 0 1 0 2 0 2 1 1 1 3 1 2 0 3 0 4 0 4 0 5 0 2 0 2 0 5 0 6 0 5 0 7 0 6 0 6 0 7 0 8 0 6 0 8 0 9 0 8 0 10 0 9 0 9 0 10 0 11 0 12 0 13 0 14 0 14 0 13 0 15 0 15 0 16 0 14 0 14 0 16 0 17 0 18 0 19 0 12 0 12 0 19 0 13 0 20 0 21 0 22 0 22 2 21 2 23 2 22 0 23 0 24 0 24 0 23 0 25 0 24 3 25 3 26 3 26 0 25 0 27 0 28 0 29 0 30 0 30 0 29 0 31 0 30 4 31 4 32 4 32 0 31 0 33 0 32 0 33 0 34 0 34 0 33 0 35 0 34 5 35 5 36 5 36 0 35 0 26 0 36 6 26 6 37 6 37 7 26 7 27 7 28 0 38 0 29 0 29 0 38 0 39 0 29 0 39 0 40 0 40 8 39 8 41 8 40 0 41 0 42 0 42 0 41 0 43 0 42 0 43 0 44 0 44 0 43 0 45 0 44 0 45 0 46 0 46 0 45 0 47 0 48 0 49 0 50 0 50 0 49 0 51 0 48 9 52 9 49 9 49 9 52 9 53 9 49 10 53 10 1 10 1 9 53 9 47 9 1 9 47 9 3 9 3 9 47 9 45 9 2 11 23 11 0 11 0 11 23 11 21 11 0 12 21 12 51 12 51 13 21 13 54 13 51 11 54 11 50 11 50 11 54 11 55 11 1 14 0 14 49 14 49 15 0 15 51 15 38 16 28 16 56 16 56 17 28 17 17 17 57 18 58 18 39 18 39 19 58 19 41 19 59 20 60 20 36 20 36 21 60 21 34 21 37 22 27 22 61 22 61 22 27 22 11 22 59 0 56 0 60 0 60 23 56 23 17 23 60 0 17 0 16 0 57 0 61 0 58 0 58 24 61 24 11 24 58 0 11 0 10 0 33 9 31 9 62 9 62 9 31 9 63 9 35 25 33 25 64 25 64 25 33 25 62 25 26 26 35 26 65 26 65 27 35 27 64 27 24 11 26 11 66 11 66 11 26 11 65 11 22 25 24 25 67 25 67 25 24 25 66 25 20 9 22 9 67 9 20 28 67 28 68 28 68 9 67 9 69 9 68 9 69 9 70 9 70 25 69 25 71 25 71 25 69 25 72 25 73 11 44 11 46 11 73 11 46 11 72 11 72 11 46 11 74 11 72 11 74 11 71 11 42 29 44 29 75 29 75 29 44 29 73 29 40 9 42 9 76 9 76 9 42 9 75 9 29 22 40 22 77 22 77 22 40 22 78 22 31 29 29 29 63 29 63 29 29 29 79 29 72 30 69 30 73 30 73 30 69 30 67 30 73 30 67 30 75 30 75 30 67 30 66 30 75 30 66 30 76 30 76 30 66 30 65 30 76 30 65 30 79 30 79 30 65 30 64 30 79 30 64 30 63 30 63 30 64 30 62 30 39 31 38 31 37 31 37 0 38 0 36 0 4 25 3 25 45 25 4 25 45 25 5 25 5 25 45 25 43 25 5 25 43 25 7 25 7 11 43 11 8 11 8 11 43 11 41 11 8 11 41 11 10 11 10 11 41 11 58 11 14 25 17 25 28 25 14 25 28 25 12 25 12 32 28 32 30 32 12 25 30 25 18 25 30 11 32 11 18 11 18 11 32 11 19 11 34 29 60 29 16 29 16 29 15 29 34 29 34 29 15 29 13 29 34 33 13 33 32 33 32 29 13 29 19 29 11 9 27 9 9 9 9 9 27 9 25 9 9 9 25 9 6 9 25 29 23 29 6 29 6 29 23 29 2 29 36 34 38 34 59 34 59 35 38 35 56 35 39 36 37 36 57 36 57 37 37 37 61 37 54 0 68 0 55 0 55 0 68 0 70 0 55 0 70 0 52 0 52 0 70 0 71 0 52 0 71 0 53 0 53 0 71 0 74 0 20 38 68 38 21 38 21 39 68 39 54 39 47 39 53 39 46 39 46 38 53 38 74 38 55 29 52 29 50 29 50 29 52 29 48 29</p>
+        </triangles>
+      </mesh>
+    </geometry>
+  </library_geometries>
+  <library_controllers/>
+  <library_visual_scenes>
+    <visual_scene id="Scene" name="Scene">
+      <node id="Camera" name="Camera" type="NODE">
+        <matrix sid="transform">0.6859207 -0.3240135 0.6515582 7.481132 0.7276763 0.3054208 -0.6141704 -6.50764 0 0.8953956 0.4452714 5.343665 0 0 0 1</matrix>
+        <instance_camera url="#Camera-camera"/>
+      </node>
+      <node id="Lamp" name="Lamp" type="NODE">
+        <matrix sid="transform">-0.2908646 -0.7711008 0.5663932 4.076245 0.9551712 -0.1998834 0.2183912 1.005454 -0.05518906 0.6045247 0.7946723 5.903862 0 0 0 1</matrix>
+        <instance_light url="#Lamp-light"/>
+      </node>
+      <node id="vennue" name="vennue" type="NODE">
+        <matrix sid="transform">1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1</matrix>
+        <instance_geometry url="#vennue-mesh" name="vennue"/>
+      </node>
+    </visual_scene>
+  </library_visual_scenes>
+  <scene>
+    <instance_visual_scene url="#Scene"/>
+  </scene>
+</COLLADA>

@@ -1,0 +1,54 @@
+# Publish all joint states -----------------------------------
+joint_state_controller:
+  type: joint_state_controller/JointStateController
+  publish_rate: 50  
+
+# Position Controllers ---------------------------------------
+RF1_pos_controller:
+  type: effort_controllers/JointPositionController
+  joint: RF_JOINT1
+  pid: {p: 1000.0, i: 0.00, d: 50.0}
+RF2_pos_controller:
+  type: effort_controllers/JointPositionController
+  joint: RF_JOINT2
+  pid: {p: 1000.0, i: 0.00, d: 50.0}
+RF3_pos_controller:
+  type: effort_controllers/JointPositionController
+  joint: RF_JOINT3
+  pid: {p: 1000.0, i: 0.00, d: 50.0}
+RB1_pos_controller:
+  type: effort_controllers/JointPositionController
+  joint: RB_JOINT1
+  pid: {p: 1000.0, i: 0.00, d: 50.0}
+RB2_pos_controller:
+  type: effort_controllers/JointPositionController
+  joint: RB_JOINT2
+  pid: {p: 1000.0, i: 0.00, d: 50.0}
+RB3_pos_controller:
+  type: effort_controllers/JointPositionController
+  joint: RB_JOINT3
+  pid: {p: 1000.0, i: 0.00, d: 50.0}
+LF1_pos_controller:
+  type: effort_controllers/JointPositionController
+  joint: LF_JOINT1
+  pid: {p: 1000.0, i: 0.00, d: 50.0}
+LF2_pos_controller:
+  type: effort_controllers/JointPositionController
+  joint: LF_JOINT2
+  pid: {p: 1000.0, i: 0.00, d: 50.0}
+LF3_pos_controller:
+  type: effort_controllers/JointPositionController
+  joint: LF_JOINT3
+  pid: {p: 1000.0, i: 0.00, d: 50.0}
+LB1_pos_controller:
+  type: effort_controllers/JointPositionController
+  joint: LB_JOINT1
+  pid: {p: 1000.0, i: 0.00, d: 50.0}
+LB2_pos_controller:
+  type: effort_controllers/JointPositionController
+  joint: LB_JOINT2
+  pid: {p: 1000.0, i: 0.00, d: 50.0}
+LB3_pos_controller:
+  type: effort_controllers/JointPositionController
+  joint: LB_JOINT3
+  pid: {p: 1000.0, i: 0.00, d: 50.0}

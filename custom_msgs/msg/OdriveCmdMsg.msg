@@ -1,0 +1,3 @@
+float32 setpoint_1
+float32 setpoint_2
+float32 setpoint_3

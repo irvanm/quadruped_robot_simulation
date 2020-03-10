@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<launch>
+    <include file="$(find gazebo_ros)/launch/empty_world.launch">
+        <arg name="world_name" value="$(find maxliebao)/worlds/maxliebao.world"/>
+    </include>
+
+  <param name="robot_description" textfile="$(find maxliebao)/urdf/maxliebao.urdf"/>
+
+  <node
+    name="spawn_model"
+    pkg="gazebo_ros"
+    type="spawn_model"
+    args="-file $(find maxliebao)/urdf/maxliebao.urdf -urdf -model maxliebao -x 1.3 -y 1 -z 0.7 -Y 3.14159"/>
+
+  <rosparam file="$(find maxliebao)/config/maxliebao_effort.yaml" command="load"/>
+
+  <node name="controller_spawner" pkg="controller_manager" type="spawner" 
+	            args="joint_state_controller
+                      RF1_pos_controller
+                      RF2_pos_controller
+                      RF3_pos_controller
+                      RB1_pos_controller
+                      RB2_pos_controller
+                      RB3_pos_controller
+                      LF1_pos_controller
+                      LF2_pos_controller
+                      LF3_pos_controller
+                      LB1_pos_controller
+                      LB2_pos_controller
+                      LB3_pos_controller"/>
+
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"/>
+
+</launch>

@@ -1,0 +1,1027 @@
+<?xml version="1.0"?>
+<robot name="maxliebao">
+
+  <!-- ros_control plugin -->
+  <gazebo>
+      <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so"/>
+  </gazebo>
+
+  <!--link name="world"/>
+
+  <joint name="fixed" type="fixed">
+    <parent link="world"/>
+    <child link="base_link"/>
+  </joint-->
+
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="0.113593903662276 -0.21706648647554 0.0725525782796028"
+        rpy="0 0 0" />
+      <mass
+        value="1.31844704893266" />
+      <inertia
+        ixx="0.0176138845473112"
+        ixy="1.32278411694406E-06"
+        ixz="-5.48867968021378E-08"
+        iyy="0.00541232504527596"
+        iyz="1.48504478644983E-07"
+        izz="0.0216123068810961" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://maxliebao/meshes/BODY.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://maxliebao/meshes/BODY.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="hokuyo">
+    <inertial>
+      <origin
+        xyz="0.0 0.0 0.0"
+        rpy="0 0 0" />
+      <mass
+        value="1e-5" />
+      <inertia
+        ixx="1e-6"
+        ixy="0"
+        ixz="0"
+        iyy="1e-6"
+        iyz="0"
+        izz="1e-6" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+          <mesh filename="package://maxliebao/meshes/hokuyo.dae"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+          <box size="0.01 0.01 0.01"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="hokuyo"
+    type="fixed">
+    <origin
+      xyz="0.09 -0.38 -0.005"
+      rpy="-1.57 0.0 -1.57" />
+    <parent
+      link="base_link" />
+    <child
+      link="hokuyo" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="imu">
+    <inertial>
+      <origin
+        xyz="0.0 0.0 0.0"
+        rpy="0 0 0" />
+      <mass
+        value="1e-5" />
+      <inertia
+        ixx="1e-6"
+        ixy="0"
+        ixz="0"
+        iyy="1e-6"
+        iyz="0"
+        izz="1e-6" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+          <box size="0.01 0.01 0.01"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+          <box size="0.01 0.01 0.01"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="imu_joint"
+    type="fixed">
+    <origin
+      xyz="0.11 -0.22 0.125"
+      rpy="0.0 0.0 -1.57" />
+    <parent
+      link="base_link" />
+    <child
+      link="imu" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="LF1">
+    <inertial>
+      <origin
+        xyz="-0.00356028712794883 -0.00217495542641513 0.0533371336391992"
+        rpy="0 0 0" />
+      <mass
+        value="0.12874452405232" />
+      <inertia
+        ixx="7.54178206100528E-05"
+        ixy="-3.17300014948878E-06"
+        ixz="2.10628877219479E-06"
+        iyy="7.9279259142516E-05"
+        iyz="1.48482617363543E-06"
+        izz="7.43038486907753E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://maxliebao/meshes/LF1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://maxliebao/meshes/LF1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="LF_JOINT1"
+    type="continuous">
+    <limit effort="300" velocity="314.0" />
+    <origin
+      xyz="0.173599224631532 -0.399354557389219 0.0725529089199334"
+      rpy="1.5707963267949 0.511092050822873 -3.43375535468868E-17" />
+    <parent
+      link="base_link" />
+    <child
+      link="LF1" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="LF2">
+    <inertial>
+      <origin
+        xyz="-0.0474435815037099 -0.0113664649099384 0.0257671435187357"
+        rpy="0 0 0" />
+      <mass
+        value="0.323696832719431" />
+      <inertia
+        ixx="0.000279146456453759"
+        ixy="-0.000417139675857478"
+        ixz="0.000305968543038374"
+        iyy="0.0016275350403163"
+        iyz="9.65659599027155E-05"
+        izz="0.00159115336884766" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://maxliebao/meshes/LF2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://maxliebao/meshes/LF2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="LF_JOINT2"
+    type="continuous">
+    <limit effort="300" velocity="314.0" />
+    <origin
+      xyz="0.0239889006854609 0.0138500051937306 0.0707119290859076"
+      rpy="1.5707963267949 -0.368671500214442 2.09439511787625" />
+    <parent
+      link="LF1" />
+    <child
+      link="LF2" />
+    <axis
+      xyz="0 0 0.99999999999998" />
+  </joint>
+  <link
+    name="LF3">
+    <inertial>
+      <origin
+        xyz="-0.127788265270613 -0.084239074728452 0.00126936250587434"
+        rpy="0 0 0" />
+      <mass
+        value="0.114240540212022" />
+      <inertia
+        ixx="1*0.000142610539008411"
+        ixy="1*-0.000216328338393764"
+        ixz="1*9.81796741797441E-07"
+        iyy="1*0.000328161817304789"
+        iyz="1*6.47218969946877E-07"
+        izz="1*0.000470766478340095" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://maxliebao/meshes/LF3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://maxliebao/meshes/LF3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="LF_JOINT3"
+    type="continuous">
+    <limit effort="300" velocity="314.0" />
+    <origin
+      xyz="-0.231822995878655 -0.0621135670258962 0.0433804774370614"
+      rpy="-2.01086507658697E-07 5.47983968079473E-15 -1.93946782700934" />
+    <parent
+      link="LF2" />
+    <child
+      link="LF3" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="RF1">
+    <inertial>
+      <origin
+        xyz="-0.00356028729085346 -0.00217495629764326 0.0533371334801993"
+        rpy="0 0 0" />
+      <mass
+        value="0.128744523661006" />
+      <inertia
+        ixx="1*7.54178194302585E-05"
+        ixy="1*-3.17300035849866E-06"
+        ixz="1*2.10628767188094E-06"
+        iyy="1*7.92792605435836E-05"
+        iyz="1*1.48482763237274E-06"
+        izz="1*7.43038659891306E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://maxliebao/meshes/RF1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://maxliebao/meshes/RF1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="RF_JOINT1"
+    type="continuous">
+    <limit effort="300" velocity="314.0" />
+    <origin
+      xyz="0.053599224631532 -0.399354557389219 0.0725529089199333"
+      rpy="-1.5707963267949 -0.523598601027881 3.14159265358979" />
+    <parent
+      link="base_link" />
+    <child
+      link="RF1" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="RF2">
+    <inertial>
+      <origin
+        xyz="-0.0522840104115751 -0.0125260995514515 0.027860305734437"
+        rpy="0 0 0" />
+      <mass
+        value="0.293729852808938" />
+      <inertia
+        ixx="1*0.000260979254978939"
+        ixy="1*-0.000399330587666675"
+        ixz="1*0.000273825093346943"
+        iyy="1*0.00153930249317469"
+        iyz="1*8.88649351862152E-05"
+        izz="1*0.0015125542107132" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://maxliebao/meshes/RF2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://maxliebao/meshes/RF2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="RF_JOINT2"
+    type="continuous">
+    <limit effort="300" velocity="314.0" />
+    <origin
+      xyz="0.0239889012320922 0.0138500042482511 0.070711929086322"
+      rpy="-1.57079632679487 -0.863675085440379 -1.04719753259462" />
+    <parent
+      link="RF1" />
+    <child
+      link="RF2" />
+    <axis
+      xyz="0 0 0.99999999999992" />
+  </joint>
+  <link
+    name="RF3">
+    <inertial>
+      <origin
+        xyz="0.133209831194905 -0.0753738304493778 0.00121607159211032"
+        rpy="0 0 0" />
+      <mass
+        value="0.114240539524017" />
+      <inertia
+        ixx="1*0.000114548942425245"
+        ixy="1*0.000202000406565315"
+        ixz="1*-6.59004020738382E-07"
+        iyy="1*0.000356220997961491"
+        iyz="1*3.73699652095502E-07"
+        izz="1*0.000470767500679258" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://maxliebao/meshes/RF3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://maxliebao/meshes/RF3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="RF_JOINT3"
+    type="continuous">
+    <limit effort="300" velocity="314.0" />
+    <origin
+      xyz="-0.231823008442479 -0.0621135692653797 0.0433804071002776"
+      rpy="1.58490470087489E-07 -4.8795080220757E-16 -0.707121241354518" />
+    <parent
+      link="RF2" />
+    <child
+      link="RF3" />
+    <axis
+      xyz="0 0 0.999999999999876" />
+  </joint>
+  <link
+    name="LB1">
+    <inertial>
+      <origin
+        xyz="-0.00356028601275479 -0.00217495602205527 0.0185587177088275"
+        rpy="0 0 0" />
+      <mass
+        value="0.128744523484197" />
+      <inertia
+        ixx="1*7.54178142885515E-05"
+        ixy="1*-3.1729967774514E-06"
+        ixz="1*2.10628654669623E-06"
+        iyy="1*7.92792604551504E-05"
+        iyz="1*1.48483080512161E-06"
+        izz="1*7.43038317528222E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://maxliebao/meshes/LB1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://maxliebao/meshes/LB1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="LB_JOINT1"
+    type="continuous">
+    <limit effort="300" velocity="314.0" />
+    <origin
+      xyz="0.173599224631526 0 0.0725529089199335"
+      rpy="-1.57079632679489 -0.550782542641248 3.7606585259785E-17" />
+    <parent
+      link="base_link" />
+    <child
+      link="LB1" />
+    <axis
+      xyz="0 0 -1" />
+  </joint>
+  <link
+    name="LB2">
+    <inertial>
+      <origin
+        xyz="0.0257671128855008 -0.0487200631973879 -0.00253746920973342"
+        rpy="0 0 0" />
+      <mass
+        value="0.323696605007919" />
+      <inertia
+        ixx="1*0.00159115114168457"
+        ixy="1*0.000318435725096246"
+        ixz="1*3.92379224048623E-05"
+        iyy="1*0.000174480345787558"
+        iyz="1*-0.000148055424313775"
+        izz="1*0.00173219827134064" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://maxliebao/meshes/LB2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://maxliebao/meshes/LB2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="LB_JOINT2"
+    type="continuous">
+    <limit effort="300" velocity="314.0" />
+    <origin
+      xyz="0.0239889055485236 0.0138499967714876 0.0359335135116864"
+      rpy="-2.80449724784631 6.30450004185909E-15 0.523598766712586" />
+    <parent
+      link="LB1" />
+    <child
+      link="LB2" />
+    <axis
+      xyz="0.999999999999992 0 0" />
+  </joint>
+  <link
+    name="LB3">
+    <inertial>
+      <origin
+        xyz="-0.137259769893214 -0.0677187262851579 0.0012160706821924"
+        rpy="0 0 0" />
+      <mass
+        value="0.114240539936642" />
+      <inertia
+        ixx="1*9.18073045158711E-05"
+        ixy="1*-0.000186523391150409"
+        ixz="1*6.7971742889103E-07"
+        iyy="1*0.000378962763010066"
+        iyz="1*3.34553918552012E-07"
+        izz="1*0.000470767627800977" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://maxliebao/meshes/LB3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://maxliebao/meshes/LB3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="LB_JOINT3"
+    type="continuous">
+    <limit effort="300" velocity="314.0" />
+    <origin
+      xyz="0.0433804661279571 -0.239257600341479 -0.0188626161448396"
+      rpy="-1.57079645284584 1.2337009210514 -1.57079632679494" />
+    <parent
+      link="LB2" />
+    <child
+      link="LB3" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="RB1">
+    <inertial>
+      <origin
+        xyz="-0.00356028780538256 -0.00217495210431383 0.0185587184412751"
+        rpy="0 0 0" />
+      <mass
+        value="0.128744524870709" />
+      <inertia
+        ixx="1*7.54178205091088E-05"
+        ixy="1*-3.17299798098093E-06"
+        ixz="1*2.10629200548915E-06"
+        iyy="1*7.92792585327807E-05"
+        iyz="1*1.48482224580922E-06"
+        izz="1*7.43038083164913E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://maxliebao/meshes/RB1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://maxliebao/meshes/RB1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="RB_JOINT1"
+    type="continuous">
+    <limit effort="300" velocity="314.0" />
+    <origin
+      xyz="0.0535992246315264 0 0.0725529089199335"
+      rpy="1.57079632679489 0.483622535977452 -3.14159265358979" />
+    <parent
+      link="base_link" />
+    <child
+      link="RB1" />
+    <axis
+      xyz="0 0 -1" />
+  </joint>
+  <link
+    name="RB2">
+    <inertial>
+      <origin
+        xyz="-0.0474436393591411 -0.0113664368013873 0.0257671872348984"
+        rpy="0 0 0" />
+      <mass
+        value="0.323696976849496" />
+      <inertia
+        ixx="1*0.000279146387182187"
+        ixy="1*-0.000417139040246701"
+        ixz="1*0.000305970741286676"
+        iyy="1*0.00162753794502063"
+        iyz="1*9.65662523830575E-05"
+        izz="1*0.00159115523706251" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://maxliebao/meshes/RB2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://maxliebao/meshes/RB2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="RB_JOINT2"
+    type="continuous">
+    <limit effort="300" velocity="314.0" />
+    <origin
+      xyz="0.0239889051808841 0.0138499974087561 0.0359335135244585"
+      rpy="1.57079632679491 0.692488919582274 2.09439507785289" />
+    <parent
+      link="RB1" />
+    <child
+      link="RB2" />
+    <axis
+      xyz="0 0 0.999999999999996" />
+  </joint>
+  <link
+    name="RB3">
+    <inertial>
+      <origin
+        xyz="-0.0744165999732416 -0.133746904962195 0.00126936244095777"
+        rpy="0 0 0" />
+      <mass
+        value="0.114240538818722" />
+      <inertia
+        ixx="0*0.000359484773911837"
+        ixy="0*-0.000200011925582525"
+        ixz="0*5.71738797052665E-07"
+        iyy="0*0.000111287478468468"
+        iyz="0*1.02758829617282E-06"
+        izz="0*0.000470766374381183" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://maxliebao/meshes/RB3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://maxliebao/meshes/RB3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="RB_JOINT3"
+    type="continuous">
+    <limit effort="300" velocity="314.0" />
+    <origin
+      xyz="-0.231823006662634 -0.0621135667231729 0.0433804202483734"
+      rpy="-2.18941904487291E-15 -8.34781210545811E-08 0.692488919581947" />
+    <parent
+      link="RB2" />
+    <child
+      link="RB3" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+
+  <transmission name="tran1">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="RF_JOINT1">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor1"/>
+  </transmission>
+
+  <transmission name="tran2">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="RF_JOINT2">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor2"/>
+  </transmission>
+
+  <transmission name="tran3">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="RF_JOINT3">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor3"/>
+  </transmission>
+
+  <transmission name="tran4">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="RB_JOINT1">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor4"/>
+  </transmission>
+
+  <transmission name="tran5">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="RB_JOINT2">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor5"/>
+  </transmission>
+
+  <transmission name="tran6">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="RB_JOINT3">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor6"/>
+  </transmission>
+
+  <transmission name="tran7">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="LF_JOINT1">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor7"/>
+  </transmission>
+
+  <transmission name="tran8">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="LF_JOINT2">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor8"/>
+  </transmission>
+
+  <transmission name="tran9">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="LF_JOINT3">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor9"/>
+  </transmission>
+
+  <transmission name="tran10">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="LB_JOINT1">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor10"/>
+  </transmission>
+
+  <transmission name="tran11">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="LB_JOINT2">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor11"/>
+  </transmission>
+
+  <transmission name="tran12">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="LB_JOINT3">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor12"/>
+  </transmission>
+
+  <gazebo reference="base_link">
+  	<mu1 value="100.0"/>
+  	<kp value="1000000.0" />
+  	<kd value="1.0" />
+  	<material>Gazebo/Grey</material>
+  </gazebo>
+  <gazebo reference="LF1">
+  	<mu1 value="100.0"/>
+  	<kp value="1000000.0" />
+  	<kd value="1.0" />
+  	<material>Gazebo/Grey</material>
+  </gazebo>
+  <gazebo reference="LF2">
+  	<mu1 value="100.0"/>
+  	<kp value="1000000.0" />
+  	<kd value="1.0" />
+  	<material>Gazebo/Orange</material>
+  </gazebo>
+  <gazebo reference="LF3">
+  	<mu1 value="100.0"/>
+  	<kp value="50000.0" />
+  	<kd value="1.0" />
+  	<material>Gazebo/Yellow</material>
+  </gazebo>
+  <gazebo reference="RF1">
+  	<mu1 value="100.0"/>
+  	<kp value="1000000.0" />
+  	<kd value="1.0" />
+  	<material>Gazebo/Grey</material>
+  </gazebo>
+  <gazebo reference="RF2">
+  	<mu1 value="100.0"/>
+  	<kp value="1000000.0" />
+  	<kd value="1.0" />
+  	<material>Gazebo/Orange</material>
+  </gazebo>
+  <gazebo reference="RF3">
+  	<mu1 value="100.0"/>
+  	<kp value="50000.0" />
+  	<kd value="1.0" />
+  	<material>Gazebo/Yellow</material>
+  </gazebo>
+  <gazebo reference="LB1">
+  	<mu1 value="100.0"/>
+  	<kp value="1000000.0" />
+  	<kd value="1.0" />
+  	<material>Gazebo/Grey</material>
+  </gazebo>
+  <gazebo reference="LB2">
+  	<mu1 value="100.0"/>
+  	<kp value="1000000.0" />
+  	<kd value="1.0" />
+  	<material>Gazebo/Orange</material>
+  </gazebo>
+  <gazebo reference="LB3">
+  	<mu1 value="100.0"/>
+ 	<kp value="50000.0" />
+  	<kd value="1.0" />
+    <material>Gazebo/Yellow</material>
+  </gazebo>
+  <gazebo reference="RB1">
+  	<mu1 value="100.0"/>
+ 	<kp value="1000000.0" />
+  	<kd value="1.0" />
+  	<material>Gazebo/Grey</material>
+  </gazebo>
+  <gazebo reference="RB2">
+  	<mu1 value="100.0"/>
+ 	<kp value="1000000.0" />
+  	<kd value="1.0" />
+  	<material>Gazebo/Orange</material>
+  </gazebo>
+  <gazebo reference="RB3">
+  	<mu1 value="100.0"/>
+ 	<kp value="50000.0" />
+  	<kd value="1.0" />
+  	<material>Gazebo/Yellow</material>
+  </gazebo>
+  <!-- hokuyo -->
+  <gazebo reference="hokuyo">
+    <sensor type="gpu_ray" name="head_hokuyo_sensor">
+      <pose>0 0 0 0 0 0</pose>
+      <visualize>false</visualize>
+      <update_rate>40</update_rate>
+      <ray>
+        <scan>
+          <horizontal>
+            <samples>720</samples>
+            <resolution>1</resolution>
+            <min_angle>-1.570796</min_angle>
+            <max_angle>1.570796</max_angle>
+          </horizontal>
+        </scan>
+        <range>
+          <min>0.10</min>
+          <max>30.0</max>
+          <resolution>0.01</resolution>
+        </range>
+        <noise>
+          <type>gaussian</type>
+          <!-- Noise parameters based on published spec for Hokuyo laser
+               achieving "+-30mm" accuracy at range < 10m.  A mean of 0.0m and
+               stddev of 0.01m will put 99.7% of samples within 0.03m of the true
+               reading. -->
+          <mean>0.0</mean>
+          <stddev>0.01</stddev>
+        </noise>
+      </ray>
+      <plugin name="gazebo_ros_head_hokuyo_controller" filename="libgazebo_ros_gpu_laser.so">
+        <topicName>/laser/scan</topicName>
+        <frameName>hokuyo</frameName>
+      </plugin>
+    </sensor>
+  </gazebo>
+  <gazebo reference="imu">
+    <gravity>true</gravity>
+    <sensor name="imu_sensor" type="imu">
+      <always_on>true</always_on>
+      <update_rate>100</update_rate>
+      <visualize>true</visualize>
+      <topic>__default_topic__</topic>
+      <plugin filename="libgazebo_ros_imu_sensor.so" name="imu_plugin">
+        <topicName>imu</topicName>
+        <bodyName>imu</bodyName>
+        <updateRateHZ>20.0</updateRateHZ>
+        <gaussianNoise>0.0</gaussianNoise>
+        <xyzOffset>0 0 0</xyzOffset>
+        <rpyOffset>0 0 0</rpyOffset>
+        <frameName>imu</frameName>
+      </plugin>
+      <pose>0 0 0 0 0 0</pose>
+    </sensor>
+  </gazebo>
+
+</robot>

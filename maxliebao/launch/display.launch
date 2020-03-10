@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<launch>
+  <arg
+    name="gui"
+    default="False" />
+  <param
+    name="robot_description"
+    textfile="$(find maxliebao)/urdf/maxliebao.urdf" />
+  <param
+    name="use_gui"
+    value="$(arg gui)" />
+  <!--joint_state_publisher的作用是向joint_state话题上发布joint状态, 以方便robot_state_publisher接受joint_state话题并生成tf-->
+  <node
+    name="joint_state_publisher"
+    pkg="joint_state_publisher"
+    type="joint_state_publisher" />
+  <node
+    name="robot_state_publisher"
+    pkg="robot_state_publisher"
+    type="state_publisher" />
+  <node
+    name="rviz"
+    pkg="rviz"
+    type="rviz"
+    args="-d $(find maxliebao)/config/urdf.rviz" />
+</launch>

@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<launch>
+
+  <node name="imu_node" pkg="maxliebao" type="imu_node.py" output="screen"/>
+  <node name="laser_node" pkg="maxliebao" type="laser_node.py" output="screen"/>
+  <node name="controller" pkg="maxliebao" type="control_demo.py" output="screen"/>
+  <node name="commander" pkg="maxliebao" type="commander.py" required="true" output="screen"/>
+
+</launch>
