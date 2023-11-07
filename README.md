@@ -1,6 +1,9 @@
 # Quadruped Robot ODrive-ROS
 Quadruped robot controller using ODrive motor drivers in Robot Operating System (ROS). A replication of Boston Dynamics Spot robot.
 
+## Video
+The simulation result can be seen [here](https://www.youtube.com/watch?v=r34hSRe1BhU)
+
 ## Installation
 ```
 # create workspace
@@ -17,3 +20,5 @@ $ catkin_make
 
 maxliebao is the package for simulation in gazebo. it used this repo https://github.com/F-sf/quadrupedal_gazebo_sim
 hardware_pkg is the package for interfacing to Odrive using USB. It runs python code.
+
+
